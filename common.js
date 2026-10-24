@@ -5,7 +5,7 @@ export const SITE_NAME = 'Partitur RNHKBP-PELIKAN';
 export const SUPABASE_URL = 'https://didowuqjuxipzfqdngnq.supabase.co';
 export const SUPABASE_KEY = 'sb_publishable_dpLZqudFvFqxtTO8UNjNEg_M9e93YpW';
 // Isi setelah deploy Google Apps Script (lihat README.md, langkah 3).
-export const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwEdG6wn08sj83sSq9cCyEyeaKQk2jzi9AjeceeMgaR49YbqOdML92xIqqFDgQXne66/exec';
+export const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrXbC4iuhBboRa_W9S4Pcs-iHiYMP_Wcm_TLt3KhpmHl4BcCV8Q2D9NvKx8FJhE41-/exec';
 
 export const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
 
