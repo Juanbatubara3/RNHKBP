@@ -130,7 +130,12 @@ async function uploadPdf(bytes, name) {
     method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
     body: JSON.stringify({ token: data.session.access_token, name, data: toBase64(bytes) })
   });
-  const json = await res.json();
+  const text = await res.text();
+  let json;
+  try { json = JSON.parse(text); } catch {
+    const hint = text.replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160);
+    throw new Error('Apps Script membalas halaman HTML, bukan data. Cek URL /exec dan pengaturan deploy (Execute as: Me, Access: Anyone). Isi balasan: ' + hint);
+  }
   if (!json.ok) throw new Error(json.error || 'Upload ke Google Drive gagal.');
   return json.url;
 }
