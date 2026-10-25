@@ -166,3 +166,6 @@ footer{padding:30px 20px;text-align:center;font-size:.86rem;color:var(--ink-soft
   .viewer{width:100vw;height:100dvh;border-radius:0}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+footer p{margin:0}
+footer .copyright{margin-bottom:4px;font-weight:700;color:var(--ink)}
